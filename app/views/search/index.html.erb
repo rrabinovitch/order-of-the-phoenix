@@ -1,1 +1,20 @@
 <h1><%= @members.size %> Results</h1>
+
+<% @members.each do |member| %>
+  <section class='member'>
+    <h3 class='name'><%= member[:name] %></h3>
+    <ul>
+      <% if member[:role] %>
+        <li class='role'>Role: <%= member[:role] %></li>
+      <% else %>
+        <li class='role'>Role: No role</li>
+      <% end %>
+      <li class='house'><%= member[:house] %></li>
+      <% if member[:patronus] %>
+        <li class='patronus'>Role: <%= member[:patronus] %></li>
+      <% else %>
+        <li class='patronus'>Patronus: No patronus</li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
