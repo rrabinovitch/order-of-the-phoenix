@@ -6,8 +6,6 @@ class SearchController < ApplicationController
 
     response = conn.get("?key=#{ENV['HP-API-KEY']}&house=#{house}&orderOfThePhoenix=true")
 
-    members_info = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
-    # @members = members_info
+    @members = JSON.parse(response.body, symbolize_names: true)
   end
 end
